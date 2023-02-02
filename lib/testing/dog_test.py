@@ -56,7 +56,7 @@ class TestDog:
         new_dog = Dog(name="joey", breed="cocker spaniel")
         session.add(new_dog)
         session.commit()
-        dog = new_from_db(session, session.query(Dog).first())
+        dog = new_from_db(session)
         assert(hasattr(dog, 'id') and hasattr(dog, 'name') and hasattr(dog, 'breed'))
 
     def test_gets_all(self):
